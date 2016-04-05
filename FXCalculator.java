@@ -39,7 +39,8 @@ public class FXCalculator extends Application {
         
     @Override
     public void start(Stage primaryStage) {                     
-        optype=OPINITIAL;
+        optype=OPINITIAL;//the inital option type
+        //create two text fields
         TextField Jtxt1=new TextField(); 
         Jtxt1.setText("0");
         Jtxt1.setEditable(false);
@@ -50,90 +51,89 @@ public class FXCalculator extends Application {
         Jtxt2.setEditable(false);
         Jtxt2.setAlignment(Pos.BASELINE_RIGHT);
         
+        //create all the buttons
         Button bt0 = new Button();        
         bt0.setText("  0  ");  
         bt0.setMinSize(BTWIDTH, BTHEIGHT);        
-        //bt0.setStyle("-fx-font-size: 15pt;");
+
         Button bt1 = new Button();
         bt1.setText("  1  ");       
         bt1.setMinSize(BTWIDTH, BTHEIGHT);        
-        //bt1.setStyle("-fx-font-size: 15pt;");
+
         Button bt2 = new Button();
         bt2.setText("  2  ");
         bt2.setMinSize(BTWIDTH, BTHEIGHT);        
-        //bt2.setStyle("-fx-font-size: 15pt;");
+
         Button bt3 = new Button();
         bt3.setText("  3  ");
         bt3.setMinSize(BTWIDTH, BTHEIGHT);        
-        //bt3.setStyle("-fx-font-size: 15pt;");
+
         Button bt4 = new Button();
         bt4.setText("  4  ");
         bt4.setMinSize(BTWIDTH, BTHEIGHT);        
-        //bt4.setStyle("-fx-font-size: 15pt;");
+
         Button bt5 = new Button();
         bt5.setText("  5  ");
         bt5.setMinSize(BTWIDTH, BTHEIGHT);        
-        //bt5.setStyle("-fx-font-size: 15pt;");
+
         Button bt6 = new Button();
         bt6.setText("  6  ");
         bt6.setMinSize(BTWIDTH, BTHEIGHT);        
-        //bt6.setStyle("-fx-font-size: 15pt;");
+
         Button bt7 = new Button();
         bt7.setText("  7  ");
         bt7.setMinSize(BTWIDTH, BTHEIGHT);        
-        //bt7.setStyle("-fx-font-size: 15pt;");
+
         Button bt8 = new Button();        
         bt8.setText("  8  ");
         bt8.setMinSize(BTWIDTH, BTHEIGHT);        
-        //bt8.setStyle("-fx-font-size: 15pt;");
-        Button bt9 = new Button();
-        //bt9.setStyle("-fx-font-size: 15pt;");
+        
+        Button bt9 = new Button();        
         bt9.setText("  9  ");
         bt9.setMinSize(BTWIDTH, BTHEIGHT);        
         
         Button bt_C = new Button();
-        bt_C.setText("  C  ");
-        //bt_C.setStyle("-fx-font-size: 15pt;");
+        bt_C.setText("  C  ");        
         bt_C.setMinSize(BTWIDTH, BTHEIGHT);        
+        
         Button bt_sign = new Button();
-        bt_sign.setText("+/-");
-        //bt_sign.setStyle("-fx-font-size: 15pt;");
+        bt_sign.setText("+/-");        
         bt_sign.setMinSize(BTWIDTH, BTHEIGHT);        
+        
         Button bt_percent = new Button();
-        bt_percent.setText("  %  ");
-        //bt_mod.setStyle("-fx-font-size: 15pt;");
+        bt_percent.setText("  %  ");        
         bt_percent.setMinSize(BTWIDTH, BTHEIGHT);
         bt_percent.setDisable(true);
         
         Button bt_del = new Button();
-        bt_del.setText("DEL");
-        //bt_del.setStyle("-fx-font-size: 15pt;");
+        bt_del.setText("DEL");        
         bt_del.setMinSize(BTWIDTH, BTHEIGHT);        
+        
         Button bt_divide = new Button();
-        bt_divide.setText("  /  ");
-        //bt_div.setStyle("-fx-font-size: 15pt;");
+        bt_divide.setText("  /  ");        
         bt_divide.setMinSize(BTWIDTH, BTHEIGHT);        
+        
         Button bt_multi = new Button();
-        bt_multi.setText("  *  ");
-        //bt_mult.setStyle("-fx-font-size: 15pt;");
+        bt_multi.setText("  *  ");        
         bt_multi.setMinSize(BTWIDTH, BTHEIGHT);        
+        
         Button bt_subtrac = new Button();
-        bt_subtrac.setText("  -  ");
-        //bt_sub.setStyle("-fx-font-size: 15pt;");
+        bt_subtrac.setText("  -  ");        
         bt_subtrac.setMinSize(BTWIDTH, BTHEIGHT);        
+        
         Button bt_dot = new Button();
-        bt_dot.setText("  .   ");
-        //bt_dot.setStyle("-fx-font-size: 15pt;");
+        bt_dot.setText("  .   ");        
         bt_dot.setMinSize(BTWIDTH, BTHEIGHT);        
+        
         Button bt_equal = new Button();
-        bt_equal.setText("  =  ");
-        //bt_equal.setStyle("-fx-font-size: 15pt;");
+        bt_equal.setText("  =  ");        
         bt_equal.setMinSize(BTWIDTH, BTHEIGHT);                
+        
         Button bt_add = new Button();
-        bt_add.setText("  +  ");
-        //bt_add.setStyle("-fx-font-size: 15pt;");
+        bt_add.setText("  +  ");        
         bt_add.setMinSize(BTWIDTH, BTHEIGHT);        
         
+        //button C is to turn 0 also the option type too
         bt_C.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -146,6 +146,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //sign button for put on or take off "-"
         bt_sign.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {                                    
@@ -171,6 +172,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //didn't make anything for this button
         bt_percent.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {                                
@@ -179,6 +181,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //delete a number
         bt_del.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -191,6 +194,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //number button also jude which number to put in different arrary
         bt7.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -212,6 +216,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //number button also jude which number to put in different arrary
         bt8.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {                
@@ -233,6 +238,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //number button also jude which number to put in different arrary
         bt9.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -254,6 +260,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //change the option type to divide
         bt_divide.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {    
@@ -265,6 +272,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //number button also jude which number to put in different arrary
         bt4.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -286,6 +294,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //number button also jude which number to put in different arrary
         bt5.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -307,6 +316,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //number button also jude which number to put in different arrary
         bt6.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -328,6 +338,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //change the option type to mutiple
         bt_multi.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -338,6 +349,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //number button also jude which number to put in different arrary
         bt1.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -359,6 +371,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //number button also jude which number to put in different arrary
         bt2.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -380,6 +393,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //number button also jude which number to put in different arrary
         bt3.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -401,6 +415,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //change the option type to subtract
         bt_subtrac.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -411,6 +426,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //add dot
         bt_dot.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -419,6 +435,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //number button also jude which number to put in different arrary
         bt0.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -440,6 +457,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //to see which option type it is and do different works
         bt_equal.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
@@ -449,8 +467,9 @@ public class FXCalculator extends Application {
                 BigDecimal bd1=new BigDecimal(oplist[0]);  
                 BigDecimal bd2=new BigDecimal(oplist[1]);                   
                 ret=bd1;
-                System.out.println(oplist[0]);
-                System.out.println(oplist[1]);
+                //for debug
+                //System.out.println(oplist[0]);
+                //System.out.println(oplist[1]);
                 if(optype==OPADD){
                     ret=bd1.add(bd2);                    
                 }
@@ -474,6 +493,7 @@ public class FXCalculator extends Application {
             }
         });
         
+        //change option type to add
         bt_add.setOnAction(new EventHandler<ActionEvent>() {            
             @Override
             public void handle(ActionEvent event) {
